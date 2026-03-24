@@ -12,17 +12,22 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         ci: {
-          blue: "#4CC9F0",
-          pink: "#F72585",
-          white: "#F8F9FA",
-          dark: "#1A1A1A",
-          brown: {
-            main: "#854F3A",
-            light: "#B37659",
-            dark: "#552E20",
-          }
+          blue: "#7DAFC8",
+          blueDM: "#44606E",
+          rose: "#C27BA0",
+          roseDM: "#8A5070",
+          white: "#F0F0F2",
+          dark: "#131315",
+          surface: "#1B1B1D",
+          border: "#28282C",
+          muted: "#8A8A92",
+          lightBG: "#F3F3F5",
         }
       },
+      fontFamily: {
+        headline: ["Froople", "sans-serif"],
+        body: ["Plus Jakarta Sans", "sans-serif"],
+      }
     },
   },
   plugins: [],
