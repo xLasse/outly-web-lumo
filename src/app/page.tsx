@@ -1,81 +1,64 @@
-import Image from "next/image";
+import Image from "next.js/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-zinc-900 text-white font-sans">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-800 bg-gradient-to-b from-zinc-900 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-zinc-800/30 lg:p-4">
-          Outly – Dein Erlebnisguide für spontane Events in Echtzeit
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-zinc-900 via-zinc-900 lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://outly.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <span className="font-bold text-orange-500 text-2xl tracking-tighter">OUTLY</span>
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center flex-col gap-8 my-16">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-full"
-          src="/assets/logo_dark_draft.png"
-          alt="Outly Logo"
-          width={180}
-          height={180}
-          priority
-        />
-        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-500 text-center leading-tight">
-          More real experiences. <br/> Less scrolling.
-        </h1>
-        <p className="text-xl text-zinc-400 text-center max-w-2xl mt-4 leading-relaxed">
-          Die erste Anlaufstelle für spontane Erlebnisse — so selbstverständlich wie Google Maps für Navigation. 
-          Egal, ob du den versteckten Flohmarkt um die Ecke suchst, neue Leute bei einem Workshop kennenlernen willst, 
-          oder die beste Party der Nacht planst. Outly macht’s möglich.
-        </p>
-
-        <div className="flex gap-4 mt-8">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">
-            App Downloaden
-          </button>
-          <button className="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded-full font-bold transition-all border border-zinc-700">
-            Event eintragen
+    <main className="min-h-screen bg-ci-surface text-ci-white font-body selection:bg-ci-rose selection:text-ci-white">
+      {/* Navbar Stub */}
+      <header className="fixed w-full top-0 left-0 z-50 bg-ci-dark/90 backdrop-blur-md border-b border-ci-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-ci-blue flex items-center justify-center">
+              <span className="font-headline text-ci-dark font-bold text-xl">O</span>
+            </div>
+            <span className="font-headline text-2xl tracking-wide">OUTLY</span>
+          </div>
+          <nav className="hidden md:flex gap-8">
+            <a href="#events" className="text-ci-muted hover:text-ci-white transition-colors">Events</a>
+            <a href="#flea-markets" className="text-ci-muted hover:text-ci-white transition-colors">Flea Markets</a>
+            <a href="#app" className="text-ci-muted hover:text-ci-white transition-colors">The App</a>
+          </nav>
+          <button className="bg-ci-blue hover:bg-ci-blueDM text-ci-dark font-headline px-6 py-2.5 rounded-full transition-colors uppercase tracking-wider text-sm">
+            Get Beta
           </button>
         </div>
-      </div>
+      </header>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left gap-8 mt-16">
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-800 hover:bg-zinc-800/30">
-          <h2 className="mb-3 text-2xl font-semibold text-orange-400">
-            Entdecken 🔍
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-70">
-            Authentische Erlebnisse finden. Kein Algorithmus, der dich in einer Bubble hält.
+      {/* Hero Section */}
+      <section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24 min-h-[90vh]">
+        <div className="flex-1 flex flex-col gap-8 text-center lg:text-left z-10">
+          <div className="inline-flex items-center justify-center lg:justify-start gap-2 px-4 py-1.5 rounded-full bg-ci-rose/10 border border-ci-rose/20 text-ci-rose w-fit mx-auto lg:mx-0">
+            <span className="w-2 h-2 rounded-full bg-ci-rose animate-pulse"></span>
+            <span className="text-sm font-medium uppercase tracking-wider">More real experiences</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-headline uppercase leading-[1.1]">
+            Less scrolling. <br />
+            <span className="text-ci-blue">More living.</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-ci-muted max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+            Die erste Anlaufstelle für spontane Erlebnisse in deiner Stadt. Finde Partys, Flohmärkte und lokale Kultur – so selbstverständlich wie Navigation.
           </p>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mt-4">
+            <button className="w-full sm:w-auto bg-ci-blue hover:bg-ci-blueDM text-ci-dark font-headline px-8 py-4 rounded-full transition-all hover:scale-105 uppercase tracking-wider text-lg">
+              Ist das tuff?
+            </button>
+            <button className="w-full sm:w-auto bg-transparent border-2 border-ci-border hover:border-ci-rose hover:text-ci-rose text-ci-white font-headline px-8 py-4 rounded-full transition-colors uppercase tracking-wider text-lg">
+              Explore Events
+            </button>
+          </div>
         </div>
 
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-800 hover:bg-zinc-800/30">
-          <h2 className="mb-3 text-2xl font-semibold text-orange-400">
-            Spontan ⚡
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-70">
-            Jetzt entdecken, nicht planen. Was geht genau in diesem Moment ab?
-          </p>
+        <div className="flex-1 relative w-full aspect-square max-w-[500px] lg:max-w-none">
+          <div className="absolute inset-0 bg-gradient-to-tr from-ci-blue/20 to-ci-rose/20 rounded-full blur-3xl"></div>
+          {/* Placeholder for Mascot - we use a rounded box with text until the vector is ready */}
+          <div className="relative w-full h-full bg-ci-dark border border-ci-border rounded-3xl shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+            <div className="text-9xl mb-4">🐾</div>
+            <p className="font-headline text-ci-muted uppercase tracking-widest">[ MASCOT VECTOR GOES HERE ]</p>
+          </div>
         </div>
-
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-800 hover:bg-zinc-800/30">
-          <h2 className="mb-3 text-2xl font-semibold text-orange-400">
-            Lokal 📍
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-70">
-            Deine Stadt, dein Viertel. Von Flohmarkt bis Rave. Warm wie ein Sommerabend mit Freunden.
-          </p>
-        </div>
-      </div>
+      </section>
     </main>
   );
 }
